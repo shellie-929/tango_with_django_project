@@ -108,7 +108,7 @@ class Chapter3IndexPageTests(TestCase):
                     index_mapping_exists = True
         
         self.assertTrue(index_mapping_exists, f"{FAILURE_HEADER}The index URL mapping could not be found. Check your PROJECT'S urls.py module.{FAILURE_FOOTER}")
-        self.assertEquals(reverse('rango:index'), '/rango/', f"{FAILURE_HEADER}The index URL lookup failed. Check Rango's urls.py module. You're missing something in there.{FAILURE_FOOTER}")
+        self.assertEqual(reverse('rango:index'), '/rango/', f"{FAILURE_HEADER}The index URL lookup failed. Check Rango's urls.py module. You're missing something in there.{FAILURE_FOOTER}")
     
     def test_response(self):
         """
@@ -154,7 +154,7 @@ class Chapter3AboutPageTests(TestCase):
         """
         Checks whether the about view has the correct URL mapping.
         """
-        self.assertEquals(reverse('rango:about'), '/rango/about/', f"{FAILURE_HEADER}Your about URL mapping is either missing or mistyped.{FAILURE_FOOTER}")
+        self.assertEqual(reverse('rango:about'), '/rango/about/', f"{FAILURE_HEADER}Your about URL mapping is either missing or mistyped.{FAILURE_FOOTER}")
     
     def test_response(self):
         """
